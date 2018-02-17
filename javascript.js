@@ -1,14 +1,11 @@
-require([
-  "esri/Map",
-  "esri/views/MapView",
-  "dojo/domReady!"
-], function(Map, MapView) {
-  // Code to create the map and view will go here
-  var map = new Map({
-  basemap: "streets"
-});
-var view = new MapView({
-    container: "viewDiv",  // Reference to the DOM node that will contain the view
-    map: map               // References the map object created in step 3
-  });
-});
+function initMap() {
+       var uluru = {lat: -25.363, lng: 131.044};
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 2,
+         center: uluru
+       });
+       var marker = new google.maps.Marker({
+         position: uluru,
+         map: map
+       });
+     }
